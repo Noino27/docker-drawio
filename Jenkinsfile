@@ -9,6 +9,7 @@ pipeline {
                 sh 'ssh -i /var/lib/jenkins/id_rsa root@10.0.2.104'
                 sh 'pwd'
             }
+        }
         stage('build') {
             steps {   
                 sh 'sleep 10'
