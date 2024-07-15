@@ -5,6 +5,7 @@ pipeline {
     stages {
         stage('build') {
             steps {   
+                sh 'ssh -i /var/lib/jenkins/id_rsa -t root@10.0.2.104'
                 sh 'sudo apt-get update'
                 sh 'sudo apt-get install ca-certificates curl'
                 sh 'sudo install -m 0755 -d /etc/apt/keyrings'
