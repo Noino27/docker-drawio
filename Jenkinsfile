@@ -7,6 +7,7 @@ pipeline {
         stage('build') {
             steps {
                 sh 'ssh -i /var/lib/jenkins/id_rsa root@10.0.2.104'
+                sh 'sleep 10'
                 sh 'pwd'
                 sh 'ifconfig'
                 sh 'echo Admin123# | sudo -S apt-get update'
