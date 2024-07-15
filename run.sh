@@ -7,4 +7,4 @@
 && chmod a+r /etc/apt/keyrings/docker.asc \
 && apt-get update \
 && apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin \
-&& docker run -i --rm --name="draw" -p 8443:8443 jgraph/drawio"
+&& docker run -i --rm --name='draw' -p 8443:8443 jgraph/drawio"
