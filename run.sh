@@ -1,6 +1,6 @@
 ssh -i /var/lib/jenkins/id_rsa root@10.0.2.104
 # Add Docker's official GPG key:
-echo 'Admin123#' | sudo -S apt-get update
+sudo apt-get update
 sudo apt-get install ca-certificates curl
 sudo install -m 0755 -d /etc/apt/keyrings
 sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
