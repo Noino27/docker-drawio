@@ -1,6 +1,5 @@
 "ssh -i /var/lib/jenkins/id_rsa root@10.0.2.104 \
 && ifconfig \
-# Add Docker's official GPG key:
 && sudo apt-get update \
 && apt-get install ca-certificates curl \
 && install -m 0755 -d /etc/apt/keyrings \
