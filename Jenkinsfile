@@ -3,16 +3,17 @@ pipeline {
         label "docker"
     }
     stages {
-        def remote = [:]
-        remote.name = '8.213.31.30'
-        remote.host = '8.213.31.30'
-        remote.user = 'root'
-        remote.password = 'Admin123#'
-        remote.allowAnyHosts = true
         stage('build') {
             steps {   
-                sshPut remote: remote, from: 'run.sh', into: '.'
-                sshCommand remote: remote, command: "run.sh"
+                sh 'sudo apt-get update'
+                sh 'sudo apt-get install ca-certificates curl'
+                sh 'sudo install -m 0755 -d /etc/apt/keyrings'
+                sh 'sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc'
+                sh 'sudo chmod a+r /etc/apt/keyrings/docker.asc'
+                sh 'sudo apt-get update'
+                sh 'sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin'
+                sh 'chmod 777 /var/run/docker.sock'
+                sh 'docker run -i --rm --name="draw" -p 8443:8443 jgraph/drawio'
             }
         }
     }
