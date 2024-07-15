@@ -5,8 +5,8 @@ pipeline {
     stages {
         stage('build') {
             steps {   
-            sh 'chmod 755 /workspace/test/run.sh'    
-            sh './workspace/test/run.sh'
+            sh 'chmod 755 run.sh'    
+            sh './run.sh'
             }
         }
     }
